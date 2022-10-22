@@ -1,4 +1,4 @@
-# hackernews-ch2
+# hackernews-vue-test
 
 ## Project setup
 ```

@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint",
     "test": "npm run lint && npm run test:unit",
     "test:unit": "jest",
-    "start": "npm run serve" 
+    "start": "npm run serve"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -23,9 +23,11 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "babel-jest": "^29.2.1",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
     "jest": "^29.2.0",
+    "vue-jest": "^3.0.7",
     "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
@@ -45,6 +47,12 @@
       "prefer-promise-reject-errors": 0,
       "no-new": 0
     }
+  },
+  "jest":{
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.vue$": "vue-jest"
+      }
   },
   "browserslist": [
     "> 1%",

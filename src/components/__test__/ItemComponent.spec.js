@@ -1,3 +1,5 @@
-test('sanity test', () => {
-    expect(true).toBe(true)
+describe('ItemComponent.vue', () => {
+    test('sanity test', () => {
+        expect(true).toBe(true)
+    })
 })

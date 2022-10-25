@@ -48,11 +48,16 @@
       "no-new": 0
     }
   },
-  "jest":{
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
     "transform": {
       "^.+\\.js$": "babel-jest",
       "^.+\\.vue$": "vue-jest"
-      }
+    }
   },
   "browserslist": [
     "> 1%",

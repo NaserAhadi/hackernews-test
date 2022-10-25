@@ -1,5 +1,7 @@
+import ItemComponent from '../ItemComponent.vue'
+
 describe('ItemComponent.vue', () => {
     test('sanity test', () => {
-        expect(true).toBe(true)
+        console.log(ItemComponent);
     })
 })

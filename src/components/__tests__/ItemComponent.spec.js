@@ -4,6 +4,6 @@ import ItemComponent from '../ItemComponent.vue'
 describe('ItemComponent.vue', () => {
     test('renders "item"', () => {
         const wrapper = mount(ItemComponent)
-        expect(wrapper.vm.$el.textContent).toContain('item')
+        expect(wrapper.text()).toContain('item')
     })
 })

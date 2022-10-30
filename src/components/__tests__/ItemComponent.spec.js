@@ -1,9 +1,9 @@
-import {mount} from "@vue/test-utils"
+import { shallowMount } from "@vue/test-utils"
 import ItemComponent from '../ItemComponent.vue'
 
 describe('ItemComponent.vue', () => {
     test('renders "item"', () => {
-        const wrapper = mount(ItemComponent)
+        const wrapper = shallowMount(ItemComponent)
         expect(wrapper.text()).toContain('item')
     })
 })

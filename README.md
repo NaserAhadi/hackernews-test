@@ -32,3 +32,5 @@ and  install this version instead ```npm i firebase@^8.10.0```
 
 
 3-ch2: for getting data from firebase you should turn on vpn.
+
+4- ch2: solve problem of undefined el option when wanna to access DOM with installing jest with vue cli and change name of directory __test__ to __tests__

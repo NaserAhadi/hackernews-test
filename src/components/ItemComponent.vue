@@ -1,6 +1,6 @@
 <template>
     <div>
-      {{item.url}}
+      {{item.by}} - {{item.url}} - {{item.score}}
     </div>
 </template>
 

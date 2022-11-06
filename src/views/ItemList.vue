@@ -1,5 +1,9 @@
 <template>
-    <Item />
+  <main>
+    <div v-for="element of items" :key="element.id">
+      <Item :item="element"/>
+    </div>
+  </main>
   </template>
   
   <script>
@@ -9,6 +13,11 @@
   export default {
     components: {
       Item
+    },
+    data(){
+      return {
+        items: window.items
+      }
     }
   }
   </script>

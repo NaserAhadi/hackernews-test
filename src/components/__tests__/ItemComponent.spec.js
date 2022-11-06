@@ -12,4 +12,24 @@ describe('ItemComponent.vue', () => {
         console.log('here', wrapper.text())
         expect(wrapper.text()).toContain(item.url)
     })
+
+    test('renders author of item (item.by)', () => {
+        const item = {
+            by: 'something'
+        }
+        const wrapper = shallowMount(ItemComponent, {
+            propsData: {item}
+        })
+        expect(wrapper.text()).toContain(item.by)
+    })
+
+    test('renders item.score', () => {
+        const item = {
+            score: 'something'
+        }
+        const wrapper = shallowMount(ItemComponent,{
+            propsData: {item}
+        })
+        expect(wrapper.text()).toContain(item.score)
+    })
 })

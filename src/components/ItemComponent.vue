@@ -1,8 +1,7 @@
 <template>
     <div>
       <li>
-        <a>{{item.title}}</a><br>
-        {{item.url}}
+        <a :href="item.url">{{item.title}}</a><br>
       </li>
       <p>
         {{item.by}} - {{item.score}}

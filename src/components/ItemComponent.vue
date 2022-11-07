@@ -1,6 +1,12 @@
 <template>
     <div>
-      {{item.by}} - {{item.url}} - {{item.score}}
+      <li>
+        <a>{{item.title}}</a><br>
+        {{item.url}}
+      </li>
+      <p>
+        {{item.by}} - {{item.score}}
+      </p>
     </div>
 </template>
 

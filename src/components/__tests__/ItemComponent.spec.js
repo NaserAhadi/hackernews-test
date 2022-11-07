@@ -31,4 +31,15 @@ describe('ItemComponent.vue', () => {
         })
         expect(wrapper.text()).toContain(item.score)
     })
+
+    test('renders link with item.title as a text', () => {
+        const item = {
+            title: 'something'
+        }
+        const wrapper = shallowMount(ItemComponent, {
+            propsData: { item }
+        })
+
+        expect(wrapper.find('a').text()).toContain(item.title)
+    })
 })

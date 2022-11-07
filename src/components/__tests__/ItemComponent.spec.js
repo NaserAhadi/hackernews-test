@@ -9,7 +9,6 @@ describe('ItemComponent.vue', () => {
         const wrapper = shallowMount(ItemComponent, {
             propsData: { item }
         })
-        console.log('here', wrapper.text())
         expect(wrapper.text()).toContain(item.url)
     })
 

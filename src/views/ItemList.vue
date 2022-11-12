@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div v-for="element of items" :key="element.id">
+    <div v-for="element of displayItems" :key="element.id">
       <Item :item="element"/>
     </div>
   </main>
@@ -16,7 +16,7 @@
     },
     data(){
       return {
-        items: window.items
+        displayItems: window.items
       }
     }
   }

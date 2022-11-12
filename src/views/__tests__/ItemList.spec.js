@@ -9,4 +9,14 @@ describe('ItemList.vue', () => {
         const wrapper = shallowMount(ItemList)
         expect(wrapper.findAllComponents(Item)).toHaveLength(window.items.length)
     })
+
+    test('check Item component receive prop', () => {
+        window.items = [{}, {}, {}]
+        const wrapper = shallowMount(ItemList)
+        const items = wrapper.findAllComponents(Item) 
+       
+        items.wrappers.forEach((wrapper, i) => {
+            expect(wrapper.props().item).toBe(window.items[i])
+        })
+    })
 })

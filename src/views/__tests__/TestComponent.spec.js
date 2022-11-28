@@ -18,4 +18,9 @@ describe('TestComponent', () => {
         const wrapper = shallowMount(TestComponent)
         expect(wrapper.find('a').attributes('href')).toBe('https://google.com')
     })
+
+    test('check the p tag has red color in the inline style', () => {
+        const wrapper = shallowMount(TestComponent)
+        expect(wrapper.find('p').element.style.color).toBe('red')
+    })
 })

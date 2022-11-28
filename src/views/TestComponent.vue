@@ -3,6 +3,8 @@
         <ChildComponent testProp="some-value"/>
 
         <a href='https://google.com'>Link</a>
+
+        <p style='color: red'>Paragraph</p>
     </div>
 </template>
 

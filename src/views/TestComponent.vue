@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ChildComponent />
+        <ChildComponent testProp="some-value"/>
     </div>
 </template>
 

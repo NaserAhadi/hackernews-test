@@ -13,4 +13,9 @@ describe('TestComponent', () => {
         // find was deprecated, instead of that use findComponent
         expect(wrapper.findComponent(ChildComponent).props().testProp).toBe('some-value')
     })
+
+    test('check the href of link to be "https://google.com"', () => {
+        const wrapper = shallowMount(TestComponent)
+        expect(wrapper.find('a').attributes('href')).toBe('https://google.com')
+    })
 })

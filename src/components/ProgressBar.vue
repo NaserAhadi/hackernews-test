@@ -1,19 +1,24 @@
 <template>
-    <div :class="{'hidden': hidden}" :style="{ 'width': '0%'}" ></div>
+    <div :class="{'hidden': hidden}" :style="{ 'width': `${width}%`}" ></div>
 </template>
 
 <script>
 export default{
     data(){
         return {
-            hidden: true
+            hidden: true,
+            width: 0
         }
     },
     methods:{
         start(){
             this.hidden = false
+            this.width = 0
         },
-        finish(){}
+        finish(){
+            this.width = 100
+            this.hidden = true
+        }
     },
 }
 </script>

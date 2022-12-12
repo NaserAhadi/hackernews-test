@@ -14,4 +14,26 @@ describe('ProgressBar.vue', () => {
         const wrapper = shallowMount(ProgressBar)
         expect(wrapper.element.style.width).toBe('0%')
     })
+
+    test('sets bar width to 100% when the finish is called', () => {
+        const wrapper = shallowMount(ProgressBar)
+        // methods work(add a log to method and see), but they can not change styles or classes in template
+        wrapper.vm.start()
+        wrapper.vm.finish()
+        expect(wrapper.element.style.width).toBe('100%')
+    })
+
+    test('hide bar when finish is called', () => {
+        const wrapper = shallowMount(ProgressBar)
+        wrapper.vm.start()
+        wrapper.vm.finish()
+        expect(wrapper.classes()).toContain('hidden')
+    })
+
+    test('reset bar width to 0 when start is called', () => {
+        const wrapper = shallowMount(ProgressBar)
+        wrapper.vm.finish()
+        wrapper.vm.start()
+        expect(wrapper.element.style.width).toBe('0%')
+    })
 })

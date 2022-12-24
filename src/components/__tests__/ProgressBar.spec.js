@@ -1,12 +1,13 @@
 import {shallowMount} from '@vue/test-utils'
+import Vue from 'vue'
 import ProgressBar from '../ProgressBar'
 
 describe('ProgressBar.vue', () => {
-    test('is hidden on initial render', () => {
+    test('is hidden on initial render', async () => {
         const wrapper = shallowMount(ProgressBar)
         expect(wrapper.classes()).toContain('hidden')
-        // it doesn't work, doesn't read method!! but why?
         wrapper.vm.start()
+        await Vue.nextTick()
         expect(wrapper.classes()).not.toContain('hidden')
     })
 
@@ -15,11 +16,11 @@ describe('ProgressBar.vue', () => {
         expect(wrapper.element.style.width).toBe('0%')
     })
 
-    test('sets bar width to 100% when the finish is called', () => {
+    test('sets bar width to 100% when the finish is called', async () => {
         const wrapper = shallowMount(ProgressBar)
-        // methods work(add a log to method and see), but they can not change styles or classes in template
         wrapper.vm.start()
         wrapper.vm.finish()
+        await Vue.nextTick()
         expect(wrapper.element.style.width).toBe('100%')
     })
 

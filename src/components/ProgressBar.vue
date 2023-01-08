@@ -17,7 +17,6 @@ export default{
             this.width = 0
             this.timer = setInterval(() => {
                     this.width ++
-                    console.log(this.width)
                 }, 100)
             // this.$nextTick(() => {
             //     this.timer = setTimeout(() => {

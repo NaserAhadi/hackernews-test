@@ -59,7 +59,6 @@ describe('ProgressBar.vue', () => {
     })
 
     test('clears timer when finish is called', () => {
-        jest.useFakeTimers()        
         jest.spyOn(window, 'clearInterval')
         jest.spyOn(window, 'setInterval')
         setInterval.mockReturnValueOnce(123)

@@ -8,7 +8,7 @@
   
 <script>
 import Item from '../components/ItemComponent.vue'
-//   import api from '../api/api'
+import { fetchListData } from '../api/api'
   
 export default {
   components: {
@@ -16,7 +16,20 @@ export default {
   },
   data(){
     return {
-      displayItems: window.items
+      displayItems: []
+    }
+  },
+  beforeMount(){
+    this.loadItems()
+  },
+  methods:{
+    loadItems(){
+      this.$bar.start()
+      fetchListData('top')
+      .then(items => {
+        this.displayItems = items
+        this.$bar.finish()
+      })
     }
   }
 }

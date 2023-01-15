@@ -4,6 +4,7 @@ import Item from '../../components/ItemComponent'
 import flushPromises from 'flush-promises'
 import { fetchListData } from '../../api/api'   
 
+// tell jest to use the created mock api file
 jest.mock('../../api/api.js')
 
 
@@ -53,5 +54,20 @@ describe('ItemList.vue', () => {
         shallowMount(ItemList, {mocks: {$bar}})
         await flushPromises()
         expect($bar.finish).toHaveBeenCalled()
+    })
+
+    test('calls $bar.fail when load is unsuccessful', async()=> {
+        expect.assertions(1)
+
+        const $bar = {
+            start: () => {},
+            fail: jest.fn()
+        }
+        fetchListData.mockRejectedValueOnce()
+        shallowMount(ItemList, {
+            mocks: {$bar}
+        })
+        await flushPromises()
+        expect($bar.fail).toHaveBeenCalled()
     })
 })
